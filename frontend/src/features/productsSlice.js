@@ -12,7 +12,7 @@ export const productsFetch=createAsyncThunk(
     async (id=null,{rejectWithValue})=>{
         try{
             
-            const response= await axios.get("https://shopping-mart-2.onrender.com//api/products");
+            const response= await axios.get("https://shopping-mart-2.onrender.com/api/products");
             // const response= await axios.get("http://localhost:5000/products");
            
 
@@ -28,7 +28,7 @@ export const productsCreate=createAsyncThunk(
     async (values,{rejectWithValue})=>{
         try{
             console.log("enter")
-            const response= await axios.post("https://shopping-mart-2.onrender.com//api/products",values,{
+            const response= await axios.post("https://shopping-mart-2.onrender.com/api/products",values,{
                 headers:{
                     "x-auth-token":localStorage.getItem("token"),
                 }
