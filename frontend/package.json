@@ -10,6 +10,9 @@
     "preview": "vite preview"
     
   },
+  "engines": {
+    "node": ">=20.19 <23"
+  },
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
     "axios": "^1.10.0",
