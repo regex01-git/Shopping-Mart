@@ -35,7 +35,7 @@ const uri=process.env.DB_URI   //ACCESSING .ENV FILE VARIABLES
     app.use('/api/login',login);
     app.use('/api/stripe',stripe);
     app.use('/api/products',productRouter);
-    app.listen(5000, () => {
+    app.listen("https://shopping-mart-fp9c.onrender.com", () => {
       console.log("Server running on port 5000");
     });
   })

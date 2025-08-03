@@ -18,7 +18,7 @@ export const registerUser = createAsyncThunk(
     async (values, { rejectWithValue }) => {
         console.log("hello")
         try {
-            const token = await axios.post("http://localhost:5000/api/register", {
+            const token = await axios.post("https://shopping-mart-fp9c.onrender.com/api/register", {
                 name: values.name,
                 email: values.email,
                 password: values.password
@@ -37,7 +37,7 @@ export const loginUser = createAsyncThunk(
     async (values, { rejectWithValue }) => {
         // console.log("hello")
         try {
-            const token = await axios.post("http://localhost:5000/api/login", {
+            const token = await axios.post("https://shopping-mart-fp9c.onrender.com/api/login", {
                 email: values.email,
                 password: values.password
             })
