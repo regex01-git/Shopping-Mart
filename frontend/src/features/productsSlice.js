@@ -60,7 +60,7 @@ const productsSlice=createSlice({
         addCase(productsFetch.rejected,(state,action)=>{
             state.status="rejected"
             ,state.error=action.payload
-            console.log(action.payload)
+            console.log("fardeen  bhai:",action.payload)
         }),
          builder.addCase(productsCreate.pending,(state,action)=>{
             state.createStatus="pending"
