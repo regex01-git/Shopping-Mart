@@ -6,7 +6,7 @@ const mongoose=require('mongoose')
 const login=require('./routes/login')
 const stripe=require('./routes/stripe')
 const productRouter=require('./routes/products')
-require("dotenv").config()  // BECAUSE OF THIS YOU CONNECT THIS FILE TO .env FILE AND ACCESS .env File variables
+// require("dotenv").config()  // BECAUSE OF THIS YOU CONNECT THIS FILE TO .env FILE AND ACCESS .env File variables
 
 
 const app=express();
