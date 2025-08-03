@@ -1,6 +1,6 @@
 const express=require('express');
 const products=require('./products')
-// const cors=require('cors')
+const cors=require('cors')
 const register=require('./routes/register')
 const mongoose=require('mongoose')
 const login=require('./routes/login')
@@ -13,42 +13,13 @@ const app=express();
 app.use(express.json({limit:'50mb'}));
 const cors = require('cors');
 
-const allowedOrigins = [
-  'http://localhost:5173',                     // local dev
-  'https://raos-industry.onrender.com',         // production frontend
-];
 
-const corsOptions = {
-  origin: (origin, callback) => {
-    // allow server-to-server calls or null origin (curl/Postman)
-    if (!origin) return callback(null, true);
-
-    if (allowedOrigins.includes(origin)) {
-      return callback(null, origin); // echo back the valid client origin
-    } else {
-      return callback(new Error(`CORS not allowed for origin: ${origin}`));
-    }
-  },
-  credentials: true,
+app.use(cors({
+  origin:'https://raos-industry.onrender.com/',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: [
-    'Content-Type',
-    'x-auth-token',
-    'Authorization',
-    // add more custom headers if needed
-  ],
-  optionsSuccessStatus: 200
-};
-
-app.use(cors(corsOptions));
-app.options('*', cors(corsOptions));  // handle preflight
-
-// app.use(cors({
-//   origin:'https://raos-industry.onrender.com/',
-//   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-//   // allowedHeaders: ['Content-Type', 'Authorization']
-//   allowedHeaders: ["Content-Type", "x-auth-token","Authorization"] 
-// }))   //app.use() :- IT IS A MIDDLEWARE
+  // allowedHeaders: ['Content-Type', 'Authorization']
+  allowedHeaders: ["Content-Type", "x-auth-token","Authorization"] 
+}))   //app.use() :- IT IS A MIDDLEWARE
 
 app.get("/",(req,res)=>{
     res.send("welcome to our online shop API....grgrg");
