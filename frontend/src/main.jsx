@@ -2,7 +2,7 @@
 import { createRoot } from 'react-dom/client'
 import {BrowserRouter} from 'react-router'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import App from './App'
+import App from './app'
 import './App.css'
 import authReducer from './features/authSlice'
 import {configureStore} from "@reduxjs/toolkit"
