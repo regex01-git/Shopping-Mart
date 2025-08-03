@@ -15,7 +15,7 @@ const cors = require('cors');
 
 const allowedOrigins = [
   'http://localhost:5173',                     // local dev
-  'https://raos-industry.onrender.com/',         // production frontend
+  'https://raos-industry.onrender.com',         // production frontend
 ];
 
 const corsOptions = {
