@@ -15,7 +15,7 @@ app.use(cors({
   origin:'https://raos-industry.onrender.com/',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   // allowedHeaders: ['Content-Type', 'Authorization']
-  allowedHeaders: ["Content-Type", "x-auth-token"] 
+  allowedHeaders: ["Content-Type", "x-auth-token","Authorization"] 
 }))   //app.use() :- IT IS A MIDDLEWARE
 
 app.get("/",(req,res)=>{
