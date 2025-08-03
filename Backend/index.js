@@ -7,7 +7,7 @@ const login=require('./routes/login')
 const stripe=require('./routes/stripe')
 const productRouter=require('./routes/products')
 require("dotenv").config()  // BECAUSE OF THIS YOU CONNECT THIS FILE TO .env FILE AND ACCESS .env File variables
-
+const port=process.env.PORT||5000
 
 const app=express();
 app.use(express.json({limit:'50mb'}));
@@ -35,7 +35,7 @@ const uri=process.env.DB_URI   //ACCESSING .ENV FILE VARIABLES
     app.use('/api/login',login);
     app.use('/api/stripe',stripe);
     app.use('/api/products',productRouter);
-    app.listen("https://shopping-mart-fp9c.onrender.com", () => {
+    app.listen(port, () => {
       console.log("Server running on port 5000");
     });
   })
