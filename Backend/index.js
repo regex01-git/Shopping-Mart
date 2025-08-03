@@ -15,7 +15,7 @@ app.use(express.json({limit:'50mb'}));
 
 
 app.use(cors({
-  origin:'https://raos-industry.onrender.com/',
+  origin:'https://raos-industry.onrender.com',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   // allowedHeaders: ['Content-Type', 'Authorization']
   allowedHeaders: ["Content-Type", "x-auth-token","Authorization"] 
